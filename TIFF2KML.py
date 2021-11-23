@@ -10,7 +10,7 @@ from osgeo import gdal
 import codecs
 
 if len(sys.argv)<2:
-    print "Usage", sys.argv[0], "input_ql_image_filename output_kml_filename"
+    print("Usage", sys.argv[0], "input_ql_image_filename output_kml_filename")
     sys.exit(1)
 
 ql_image_filename=sys.argv[1]
@@ -50,7 +50,7 @@ kml = (
    ) %(overlay_name, ql_image_filename, north_latitude, south_latitude, east_longitude, west_longitude)
 
 with codecs.open(kml_output_filename, encoding='utf-8', mode='w+') as kmlFile:
-    kmlFile.write(kml.encode('utf-8'))
+    kmlFile.write(kml)
 
 #For web services: use following content-type header
 #Content-Type: application/vnd.google-earth.kml+xml'
